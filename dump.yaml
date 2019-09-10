@@ -1,7 +1,0 @@
-name: ekara-demo-al
-qualifier: dev
-
-ekara:
-  distribution:
-    repository: nirekin/distribution
-
