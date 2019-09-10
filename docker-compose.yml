@@ -3,6 +3,6 @@ services:
   web:
     build: .
     ports:
-      - "5000:5000"
+      - "{{ .Vars.app.web.port }}:5000"
   redis:
     image: "redis:alpine"
