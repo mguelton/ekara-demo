@@ -8,6 +8,9 @@ ekara:
     visualizer:
       repository: ekara-platform/swarm-visualizer-stack
 
+templates:
+  - "docker-compose.yml"
+  
 nodes:
   '*':
     provider:
@@ -19,8 +22,9 @@ nodes:
               - proto: tcp
                 ports:
                   - {{ .Vars.app.visualizer.port }} 
+                  - {{ .Vars.app.web.port }} 
                 cidr_ip: 0.0.0.0/0
-                rule_desc: allow all on port {{ .Vars.app.visualizer.port }} for the swarm visualizer 
+                rule_desc: allow all on port for the swarm visualizer and the web server
         instances:
             instance_type: "t2.micro"
         volumes:
