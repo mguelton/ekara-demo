@@ -40,13 +40,13 @@ nodes:
             fs:
               mount_path: /var/lib/docker
   cache:
-    labels:
-      role: cache
     instances: 3
-  web:
     labels:
-      role: webserver
+      role_cache: "yes"
+  web:
     instances: 2
+    labels:
+      role_webserver: "yes"
 
 stacks:
   visualizer:
