@@ -26,9 +26,8 @@ nodes:
                 ports:
                   - {{ .Vars.app.visualizer.port }}
                   - {{ .Vars.app.web.port }}
-                  - 8080
                 cidr_ip: 0.0.0.0/0
-                rule_desc: Allow inbound public traffic to all exposed services
+                rule_desc: Allow inbound HTTP
         instances:
             instance_type: "t2.micro"
         volumes:
@@ -42,13 +41,11 @@ nodes:
   all:
     instances: 1
     labels:
-      role_cache: "yes"
-      role_webserver: "yes"
+      role_cache: true
+      role_webserver: true
 
 stacks:
   visualizer:
     component: visualizer
-  swarmpit:
-    component: swarmpit
   app:
     component: _
