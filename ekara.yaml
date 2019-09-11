@@ -7,6 +7,9 @@ ekara:
   components:
     visualizer:
       repository: ekara-platform/swarm-visualizer-stack
+    swarmpit:
+      repository: swarmpit/swarmpit
+      ref: 1.7
 
 templates:
   - "docker-compose.yml"
@@ -21,10 +24,11 @@ nodes:
             rules:
               - proto: tcp
                 ports:
-                  - {{ .Vars.app.visualizer.port }} 
-                  - {{ .Vars.app.web.port }} 
+                  - {{ .Vars.app.visualizer.port }}
+                  - {{ .Vars.app.web.port }}
+                  - 8080
                 cidr_ip: 0.0.0.0/0
-                rule_desc: allow all on port for the swarm visualizer and the web server
+                rule_desc: Allow inbound public traffic to all exposed services
         instances:
             instance_type: "t2.micro"
         volumes:
@@ -35,12 +39,10 @@ nodes:
               device_name: /dev/xvdf
             fs:
               mount_path: /var/lib/docker
-
   cache:
     labels:
       role: cache
     instances: 3
-
   web:
     labels:
       role: webserver
@@ -49,7 +51,7 @@ nodes:
 stacks:
   visualizer:
     component: visualizer
-      
+  swarmpit:
+    component: swarmpit
   app:
     component: _
-    
