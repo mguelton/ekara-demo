@@ -7,9 +7,6 @@ ekara:
   components:
     visualizer:
       repository: ekara-platform/swarm-visualizer-stack
-
-templates:
-  - "docker-compose.yml"
   
 nodes:
   '*':
