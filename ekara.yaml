@@ -1,5 +1,5 @@
 name: ekara-demo
-qualifier: dev
+qualifier: light
 
 ekara:
   parent:
@@ -39,13 +39,10 @@ nodes:
               device_name: /dev/xvdf
             fs:
               mount_path: /var/lib/docker
-  cache:
-    instances: 3
+  all:
+    instances: 1
     labels:
       role_cache: "yes"
-  web:
-    instances: 2
-    labels:
       role_webserver: "yes"
 
 stacks:
