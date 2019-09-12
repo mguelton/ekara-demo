@@ -30,7 +30,7 @@ app:
 The file above will be used as external variables to template the demo. Then download the latest [Ekara CLI](https://github.com/ekara-platform/cli/releases), put it in your path and run:
 
 ```
-$ ekara deploy https://github.com/ekara-platform/demo -p vars.yaml -l
+$ ekara deploy https://github.com/ekara-platform/demo@light -p vars.yaml -l
 ```
 
 This will:
@@ -42,8 +42,8 @@ This will:
   * The Swarm visualizer
   * The "Hello World" application (Redis + Python app)
 
-A lot of actions are executed so this may take a while (usually around 10 minutes). You can run the `light` branch instead which deploy the same stacks to a unique machine and is faster to deploy:
+You can run the `master` branch instead which deploy the same stacks to multiple machines but is longer to execute:
 
 ```
-$ ekara deploy https://github.com/ekara-platform/demo@light -p vars.yaml -l
+$ ekara deploy https://github.com/ekara-platform/demo -p vars.yaml -l
 ```
