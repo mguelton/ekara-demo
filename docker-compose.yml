@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    build: .
+    image: "ekaraplatform/demo"
     ports:
       - "{{ .Vars.app.web.port }}:5000"
   redis:
