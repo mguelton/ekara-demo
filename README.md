@@ -2,10 +2,10 @@
 
 This repository shows how Ekara can:
 
-* Create an infrastructure (on AWS here),
-* Install an container orchestrator (Docker Swarm here),
+* Create an infrastructure (on AWS here).
+* Install an container orchestrator (Docker Swarm here).
 * Deploy software stacks:
-  * Applicative stacks (a trivial "Hello World" application),
+  * Applicative stacks (a trivial "Hello World" application).
   * On-the-shelf stacks (a Swarm visualizer).
 
 ## Running the demo
