@@ -42,12 +42,10 @@ nodes:
   web:
     instances: 2
     labels:
-      role_web: false
+      role_web: true
 
 stacks:
   visualizer:
     component: visualizer
-  swarmpit:
-    component: swarmpit
   app:
     component: _
