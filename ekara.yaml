@@ -7,9 +7,6 @@ ekara:
   components:
     visualizer:
       repository: ekara-platform/swarm-visualizer-stack
-    swarmpit:
-      repository: swarmpit/swarmpit
-      ref: 1.7
 
 templates:
   - "docker-compose.yml"
