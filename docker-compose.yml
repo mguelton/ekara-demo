@@ -8,7 +8,7 @@ services:
       mode: global
       placement:
         constraints:
-          - node.labels.ek_label_role_web == true
+          - node.labels.role_web == true
       restart_policy:
         condition: any
         delay: 5s
@@ -20,7 +20,7 @@ services:
       mode: global
       placement:
         constraints:
-          - node.labels.ek_label_role_cache == true
+          - node.labels.role_cache == true
       restart_policy:
         condition: any
         delay: 5s
