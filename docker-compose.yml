@@ -4,5 +4,25 @@ services:
     image: "ekaraplatform/demo"
     ports:
       - "{{ .Vars.app.web.port }}:5000"
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.labels.role_web == true
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 30s
   redis:
     image: "redis:alpine"
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.labels.role_cache == true
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 30s

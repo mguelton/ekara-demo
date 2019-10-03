@@ -36,7 +36,7 @@ nodes:
             fs:
               mount_path: /var/lib/docker
   cache:
-    instances: 4
+    instances: 3
     labels:
       role_cache: true
   web:
