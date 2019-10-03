@@ -40,7 +40,7 @@ nodes:
     labels:
       role_cache: true
   web:
-    instances: 2
+    instances: 5
     labels:
       role_web: true
 
