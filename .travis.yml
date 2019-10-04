@@ -1,7 +1,7 @@
 sudo: 'required'
 
 services:
-  - 'docker'
+- 'docker'
 
 env:
  global:
@@ -22,4 +22,3 @@ jobs:
       - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - docker push $DOCKER_REPO/$IMAGE:$TAG
       if: type = push AND env(DOCKER_REPO) != "" AND env(DOCKER_USERNAME) != ""
-      
