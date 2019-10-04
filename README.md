@@ -30,7 +30,7 @@ app:
 The file above will be used as external variables to template the demo. Then download the latest [Ekara CLI](https://github.com/ekara-platform/cli/releases), put it in your path and run:
 
 ```
-$ ekara deploy https://github.com/ekara-platform/demo -p vars.yaml -l
+$ ekara apply https://github.com/ekara-platform/demo --verbose
 ```
 
 This will:
@@ -38,12 +38,11 @@ This will:
 1. Create the security groups, machines and volumes on AWS.
 2. Install the required packages, Docker CE and setup a Swarm cluster on the nodes.
 3. Deploy:
-  * The Ekara core stack (Hashicorp Consul + Ekara API)
   * The Swarm visualizer
   * The "Hello World" application (Redis + Python app)
 
 A lot of actions are executed so this may take a while (usually around 10 minutes). You can run the `light` branch instead which deploy the same stacks to a unique machine and is faster to deploy:
 
 ```
-$ ekara deploy https://github.com/ekara-platform/demo@light -p vars.yaml -l
+$ ekara apply https://github.com/ekara-platform/demo@light --verbose
 ```
