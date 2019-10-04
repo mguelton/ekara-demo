@@ -1,12 +1,11 @@
+---
 name: ekara-demo
 qualifier: full
 
 ekara:
   parent:
     repository: ekara-platform/distribution
-  components:
-    visualizer:
-      repository: ekara-platform/swarm-visualizer-stack
+    ref: v19.9
 
 templates:
   - "docker-compose.yml"
@@ -46,6 +45,6 @@ nodes:
 
 stacks:
   visualizer:
-    component: visualizer
+    component: ek-swarm-visualizer
   app:
     component: _
