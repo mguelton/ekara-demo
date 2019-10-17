@@ -6,6 +6,10 @@ ekara:
   parent:
     repository: ekara-platform/distribution
     ref: master
+  components:
+    ek-aws:
+      repository: adrienlauer/aws-provider
+      ref: efs
 
 templates:
   - "docker-compose.yml"
