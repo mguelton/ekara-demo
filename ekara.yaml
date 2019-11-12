@@ -9,7 +9,10 @@ ekara:
   components:
     ek-aws:
       repository: adrienlauer/aws-provider
-      ref: efs
+      ref: destroy-support
+    ek-swarm:
+      repository: adrienlauer/swarm-orchestrator
+      ref: copy-support
 
 templates:
   - "docker-compose.yml"
