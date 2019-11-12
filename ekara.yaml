@@ -9,7 +9,7 @@ ekara:
   components:
     ek-aws:
       repository: adrienlauer/aws-provider
-      ref: destroy-support
+      ref: efs
     ek-swarm:
       repository: adrienlauer/swarm-orchestrator
       ref: copy-support
