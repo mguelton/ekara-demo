@@ -6,17 +6,17 @@ ekara:
   parent:
     repository: ekara-platform/distribution
     ref: master
-  components:
-    ek-aws:
-      repository: adrienlauer/aws-provider
-      ref: efs
-    ek-swarm:
-      repository: adrienlauer/swarm-orchestrator
-      ref: copy-support
+#  components:
+#    ek-aws:
+#      repository: adrienlauer/aws-provider
+#      ref: efs
+#    ek-swarm:
+#      repository: adrienlauer/swarm-orchestrator
+#      ref: copy-support
 
 templates:
   - "docker-compose.yml"
-  
+
 nodes:
   '*':
     provider:
