@@ -42,14 +42,16 @@ nodes:
       role_cache: true
     provider:
       params:
-        instance_type: "t3.micro"
+        instances:
+          instance_type: "t3.medium"
   web:
     instances: 2
     labels:
       role_web: true
     provider:
       params:
-        instance_type: "t3.nano"
+        instances:
+          instance_type: "t3.small"
 
 stacks:
   visualizer:
