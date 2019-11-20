@@ -5,7 +5,8 @@ services:
     ports:
       - "{{ .Vars.app.web.port }}:5000"
     deploy:
-      mode: global
+      mode: replicated
+      replicas: 2
       placement:
         constraints:
           - node.labels.role_web == true
@@ -17,7 +18,8 @@ services:
   redis:
     image: "redis:alpine"
     deploy:
-      mode: global
+      mode: replicated
+      replicas: 3
       placement:
         constraints:
           - node.labels.role_cache == true

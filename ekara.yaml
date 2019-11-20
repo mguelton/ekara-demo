@@ -6,13 +6,10 @@ ekara:
   parent:
     repository: ekara-platform/distribution
     ref: master
-#  components:
-#    ek-aws:
-#      repository: adrienlauer/aws-provider
-#      ref: efs
-#    ek-swarm:
-#      repository: adrienlauer/swarm-orchestrator
-#      ref: copy-support
+  components:
+    ek-swarm:
+      repository: adrienlauer/swarm-orchestrator
+      ref: copy-support
 
 templates:
   - "docker-compose.yml"
@@ -31,8 +28,6 @@ nodes:
                   - {{ .Vars.app.web.port }}
                 cidr_ip: 0.0.0.0/0
                 rule_desc: Allow inbound HTTP
-        instances:
-            instance_type: "t2.micro"
         volumes:
           docker:
             ebs:
@@ -45,10 +40,16 @@ nodes:
     instances: 3
     labels:
       role_cache: true
+    provider:
+      params:
+        instance_type: "t3.micro"
   web:
     instances: 2
     labels:
       role_web: true
+    provider:
+      params:
+        instance_type: "t3.nano"
 
 stacks:
   visualizer:
