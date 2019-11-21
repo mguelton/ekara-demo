@@ -6,10 +6,6 @@ ekara:
   parent:
     repository: ekara-platform/distribution
     ref: master
-  components:
-    ek-swarm:
-      repository: adrienlauer/swarm-orchestrator
-      ref: copy-support
 
 templates:
   - "docker-compose.yml"
