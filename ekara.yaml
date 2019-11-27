@@ -24,13 +24,6 @@ nodes:
                   - {{ .Vars.app.web.port }}
                 cidr_ip: 0.0.0.0/0
                 rule_desc: Allow inbound HTTP
-        volumes:
-          docker:
-            ebs:
-              volume_size: 10
-              delete_on_termination: true
-            fs:
-              mount_path: /var/lib/docker
   cache:
     instances: 3
     labels:
