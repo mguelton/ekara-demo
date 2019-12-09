@@ -13,33 +13,15 @@ templates:
 nodes:
   '*':
     provider:
-      name: ek-aws
-      params:
-        securityGroups:
-          app:
-            rules:
-              - proto: tcp
-                ports:
-                  - {{ .Vars.app.visualizer.port }}
-                  - {{ .Vars.app.web.port }}
-                cidr_ip: 0.0.0.0/0
-                rule_desc: Allow inbound HTTP
+      name: ek-azure
   cache:
     instances: 3
     labels:
       role_cache: true
-    provider:
-      params:
-        instances:
-          instance_type: "t3.medium"
   web:
     instances: 2
     labels:
       role_web: true
-    provider:
-      params:
-        instances:
-          instance_type: "t3.small"
 
 stacks:
   visualizer:
