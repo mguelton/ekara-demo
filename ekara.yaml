@@ -11,7 +11,7 @@ templates:
   - "docker-compose.yml"
 
 vars:
-  toto: "agent -server -bootstrap -ui -client 0.0.0.0 -bind \"{{ `{{ GetInterfaceIP 'eth0' }}` }}\""
+  toto: "agent -server -bootstrap -ui -client 0.0.0.0 -bind \"{{"{{"}} GetInterfaceIP 'eth0' {{"}}"}}\""
 
 nodes:
   '*':
