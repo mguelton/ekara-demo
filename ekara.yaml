@@ -5,7 +5,7 @@ qualifier: full
 ekara:
   parent:
     repository: ekara-platform/distribution
-    ref: v19.9
+    ref: master
 
 templates:
   - "docker-compose.yml"
